@@ -64,8 +64,11 @@ DATE=$(echo "$PARSED" | awk '{print $3}')
 USD_SHORT=$(LC_NUMERIC=C printf "%.2f" "$USD_BRL")
 GBP_SHORT=$(LC_NUMERIC=C printf "%.2f" "$GBP_BRL")
 
-# Menu bar: avoid | in display text, use · as visual separator
-echo "🇧🇷 \$${USD_SHORT} · £${GBP_SHORT}"
+# Menu bar: custom monochrome "$" template icon next to the label.
+# templateImage must be base64-encoded PNG (18x18). Source: Resources/currency.png
+TEMPLATE_ICON="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABQ0lEQVR4nK3SPS9lURgF4OfeK8QokGhEotAodCQiUUxCQaZQ6OY/TKVRKxH+CD+BgmSKiR8wPhKSmcgUoxAJ8RGXYr+X7TrHaaxkZ3+cddb7rrU3n4Raxbc6umJ/hyaeisj1D0QaeMRSjMc4+6h4aZdz+IUDfMsKV4rVYvRiFw+4wH/cYw/9Ga8UHTFvSHmMYB1rGJby2Q5OI/+xPaNmzLPYxym+RId/sIzONm6hUGv/E18xJd3WZZyvYSHWhbfXQsv7AHaCfCuF/R09Ga8SOWlGsnglWTnFRImbSqxiE0NSToch8kYo39SyeQvzse6TLJ2H4Ci6o8OX7jsyoacQbmIck9L1X2YFF8PeTcYtRD2qjOEv/uEMJzgK0ekCN4VotduHH/iNY+kNDbZxKpFXW4lR9O1d9TKxute3cy1lUprLp+AZAgY+NXolJ50AAAAASUVORK5CYII="
+# Avoid | in display text — it's the SwiftBar attribute separator.
+echo "\$${USD_SHORT} · £${GBP_SHORT} | templateImage=${TEMPLATE_ICON}"
 
 echo "---"
 echo "Exchange Rates (→ BRL) | color=gray"

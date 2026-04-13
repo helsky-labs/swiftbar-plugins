@@ -32,7 +32,9 @@ else
     MENUBAR_LABEL="$CURRENT_OUTPUT"
 fi
 
-echo "🔊 ${MENUBAR_LABEL:-Audio}"
+# Custom monochrome speaker template icon. Source: Resources/audio.png (18x18)
+TEMPLATE_ICON="iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABH0lEQVR4nKXUvy5EQRQG8N9dS4RkESIRChuVB9CSbCi0Ct5ApyEShceRoFXqVR5AtfEACIk/iT+L4p6bTO5aNu6XTM7MOd/9zpkzM5f+UEPWJ7cnBqoKZInIPJqJnz6rTAmbuMV6rOuleJdYFqMWYxbH+IqxEryiyj3slnxdGEY7BF7xiVbExjCKLXQwhaxW+ngC45jBdBCLXhRZd3COUzxgIxIaDMIB7nETthOEwq4GrxXrBo5wJrIVGIlqJsOmMbE9uAzxBVyJ0yyT/416Mn+R7/kj/I1SomK+JO9XG4u4LoumzW7iMUTf5T1ZC94hLmJ+h+3fKq10/OmFfMMyTjAU/k7wnvCMOezLb33PXld6Ij+JVX60KSr/RlL8mf0bwTs5IznoxZoAAAAASUVORK5CYII="
+echo "${MENUBAR_LABEL:-Audio} | templateImage=${TEMPLATE_ICON}"
 echo "---"
 
 # Output devices
